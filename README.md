@@ -1,5 +1,7 @@
-# vue-drag-form-builder
+![vue-drag-form-builder](https://github.com/moman13/vue_drag-form_builder/blob/main/banner.png)
 
+
+# vue-drag-form-builder
 **vue-drag-form-builder** is a powerful Vue.js plugin for creating customizable, drag-and-drop form builders. Ideal for projects that need flexible form building capabilities without compromising on ease of use.
 
 ## Installation

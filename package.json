@@ -1,5 +1,5 @@
 {
-  "name": "vue-form-builder",
+  "name": "vue-drag-form-builder",
   "version": "1.0.0",
   "description": "A reusable form builder for Vue.js",
   "main": "dist/index.js",

@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import './assets/css/form_builder.css';
-import FormBuilder from './views/FormBuilder.vue';
+import './assets/css/vue-drag-form-builder.css';
+import VueDragFormBuilder from './views/VueDragFormBuilder.vue';
 import TextInput from './components/TextInput.vue';
 import TextareaInput from './components/TextareaInput.vue';
 import CheckBox from './components/CheckBox.vue';
@@ -22,6 +22,6 @@ Vue.component('number-input',NumberInput);
 Vue.component('file-input',FileInput);
 Vue.component('time-input',TimeInput);
 Vue.component('year-input',YearInput);
-Vue.component('form-builder', FormBuilder);
+Vue.component('vue-drag-form-builder', VueDragFormBuilder);
 
-export default FormBuilder;
+export default VueDragFormBuilder;

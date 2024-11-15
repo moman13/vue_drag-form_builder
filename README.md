@@ -25,7 +25,7 @@ npm i vue-drag-form-builder
 ```html
   <template>
   <div id="app">
-    <form-builder />
+    <vue-drag-form-builder />
   </div>
 </template>
 ```

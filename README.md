@@ -31,7 +31,9 @@ npm i vue-drag-form-builder
 ```
 
 ## 🖼️ Screenshot
-  will add soon 
+
+![vue-drag-form-builder](https://github.com/moman13/vue_drag-form_builder/blob/main/screenshot-1.png)
+
 ## 🖼️ Demo
     will add soon 
 ## 🛠️ Features

@@ -8,7 +8,7 @@
                     Text Elements
               </small>
               <div class="row mt-1">
-                <div class="col-md-6">
+                <div class="col-md-6" draggable="true" @dragstart="onDragStart(fields[0])">
                   <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
                       <span class="svg-icon svg-icon-muted svg-iلcon-2hx" style="padding: 5px;color: #636060f2;">
                                   <i class="bi bi bi-fonts" style="font-size: x-large;"></i>
@@ -16,7 +16,7 @@
                       </span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" draggable="true" @dragstart="onDragStart(fields[1])">
 
                   <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
                     <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
@@ -26,7 +26,7 @@
 
                   </div>
                 </div>
-                <div class="col-md-6 mt-3">
+                <div class="col-md-6 mt-3" draggable="true" @dragstart="onDragStart(fields[2])">
                   <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
                       <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
                                   <i class="bi bi-123" style="font-size: x-large;"></i>
@@ -189,9 +189,9 @@ export default {
     return {
       draggedFieldIndex: null,
       fields: [
-        {id:1, type: 'text-input', label: 'اجابة قصيرة'  ,input_type:'text',required:false},
-        { id:2,type: 'textarea-input', label: 'فقرة'  ,input_type:'textarea',required:false},
-        { id:3,type: 'number-input', label: ' رقم'  ,input_type:'number',required:false},
+        {id:1, type: 'text-input', label: 'Single line'  ,input_type:'text',required:false},
+        { id:2,type: 'textarea-input', label: 'Multiline'  ,input_type:'textarea',required:false},
+        { id:3,type: 'number-input', label: 'Number'  ,input_type:'number',required:false},
         { id:4,type: 'checkbox', input_type:"checkbox", label: 'مربع اختيار',required:false },
         { id:5,type: 'select-input', label: 'قائمة منسدلة', options: ['اخنيار 1', 'اختيار 2', 'اختيار 3'],input_type:'select',model_name:''},
         { id:6,type: 'multiple-select-input', label: 'خيار متعدد',options: ['اخنيار 1', 'اختيار 2', 'اختيار 3'],input_type:'selectmuilt',model_name:'' },

@@ -84,3 +84,6 @@ button.icon i {
 .element-title{
     margin: 10px;
 }
+.form-control{
+    background: #eeeeee42;
+}

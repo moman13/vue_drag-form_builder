@@ -2,107 +2,161 @@
   <div>
     <div class=" mb-xl-10 row">
       <div class="col-3">
-        <div class="card mb-3" v-if="selected">
-          <div class="card-header border-0 pt-6">
-            <div class="card-title" >
-              <h3>خصائص الحقل</h3>
-            </div>
-            <span class="cursor-pointer" @click="selected=null">
-                            <svg style="width: 20px;" fill="#ff0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>
-                        </span>
-
-          </div>
+        <div class="card">
           <div class="card-body border-top ">
-            <div>
-              <div class="col-12 mb-2">
-                <label class="mb-2">اسم الحقل </label>
-                <input  v-model="selected.label"  type="text"  class="form-control form-control-solid"/>
-              </div>
-              <div class="col-6 mb-2 mt-3" >
-
-                <input v-model="selected.required"  type="checkbox"  />   <label>اجباري </label>
-              </div>
-              <div class="row mb-2" v-if="selected.type == 'select-input' || selected.type == 'multiple-select-input'">
-                <div class="col-12 mb-2">
-                  <label>ونوع الحقل</label>
-                  <select v-model="selected.input_type"  name="" id="" class="form-control">
-                    <option value="options">خيارات جديدة </option>
-                    <option value="model">خيارات معرفة مسبقا</option>
-                  </select>
+              <small>
+                    Text Elements
+              </small>
+              <div class="row mt-1">
+                <div class="col-md-6">
+                  <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-iلcon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi bi bi-fonts" style="font-size: x-large;"></i>
+                                 <span class="element-title">Single line</span>
+                      </span>
+                  </div>
                 </div>
-                <div class="col-12 mb-2" v-if="selected.input_type=='model'">
-                  <select v-model="selected.model_name"  name="xxx"  class="form-control">
-                    <option v-for="data in getSelectdOptionMenu"  :value="data.id">{{data.name}}</option>
+                <div class="col-md-6">
 
+                  <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                <i class="bi bi-justify-left" style="font-size: x-large;"></i>
+                                <span class="element-title">Multiline</span>
+                    </span>
 
-                  </select>
+                  </div>
                 </div>
-                <div class="col-12" v-else>
-
-                  <div   class="mb-2" v-for="(row,index) in selected.options" :id="index" >
-                    <span class="delete_options"  @click="addOptions" v-if="index==0"><i class="fas fa-plus-circle" style="color:blue"></i></span>
-                    <span class="delete_options"  @click="removeOptions(index)" v-if="index!==0"><i class="far fa-trash-alt" style="color:red"></i></span>
-                    <input type="text" v-model="selected.options[index]" class="form-control" />
+                <div class="col-md-6 mt-3">
+                  <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi bi-123" style="font-size: x-large;"></i>
+                                  <span class="element-title">Number</span>
+                      </span>
 
                   </div>
                 </div>
 
               </div>
-              <div class="row mb-2" v-else-if="selected.type == 'text-input'">
+          </div>
+          <div class="card-body  ">
+            <small>
+              Date Elements
+            </small>
+            <div class="row mt-1">
+              <div class="col-md-6">
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi  bi-calendar-date" style="font-size: x-large;"></i>
+                                 <span class="element-title">Date</span>
+                      </span>
+                </div>
+              </div>
+              <div class="col-md-6">
 
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                <i class="bi bi-clock" style="font-size: x-large;"></i>
+                                <span class="element-title">Time</span>
+                    </span>
+
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi bi-calendar" style="font-size: x-large;"></i>
+                                  <span class="element-title">Date & Time</span>
+                      </span>
+
+                </div>
               </div>
 
             </div>
           </div>
-        </div>
-        <div class="card mb-3" v-for="field in fields" :key="field.id" draggable="true" @dragstart="onDragStart(field)">
-          <div class="card-body border-top ">
-            <h1 >
-                            <span v-if="field.input_type=='checkbox'" class="svg-icon svg-icon-muted svg-icon-2hx">
-                                <i class="bi bi-check2-square" style="font-size: x-large;"></i>
-                            </span>
-              <span v-if="field.input_type=='text'" class="svg-icon svg-icon-muted svg-icon-2hx">
-                                <i class="bi bi-type" style="font-size: x-large;" ></i>
+          <div class="card-body  ">
+            <small>
+              Multi  Elements
+            </small>
+            <div class="row mt-1">
+              <div class="col-md-6">
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi  bi-toggle-on" style="font-size: x-large;"></i>
+                                 <span class="element-title" >Yes/No</span>
+                      </span>
+                </div>
+              </div>
+              <div class="col-md-6">
 
-                            </span>
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                <i class="bi bi-caret-down-square" style="font-size: x-large;"></i>
+                                <span class="element-title">Dropdown</span>
+                    </span>
 
-              <span v-if="field.input_type=='textarea'" class="svg-icon svg-icon-muted svg-icon-2hx">
-                                <i class="bi bi-justify-right" style="font-size: x-large;"></i>
-                            </span>
-              <span v-if="field.input_type=='date'"  class="svg-icon svg-icon-muted svg-icon-2hx">
-                                <i class="bi bi-calendar-check" style="font-size: smaller;"></i>
-                            </span>
-              <span v-if="field.input_type=='number'"  class="svg-icon svg-icon-muted svg-icon-2hx">
-                <i class="bi bi-123"></i>
-                </span>
-              <span  v-if="field.input_type=='time'" class="svg-icon svg-icon-muted svg-icon-2hx">
-                                <i class="bi bi-clock" style="font-size: smaller;"></i>
-                            </span>
-              <span  v-if="field.input_type=='years'" class="svg-icon svg-icon-muted svg-icon-2hx">
-                                <i class="bi bi-calendar-date" style="font-size: smaller;"></i>
-                            </span>
-              <span v-if="field.input_type=='file'" class="svg-icon svg-icon-muted svg-icon-2hx">
-                               <i class="bi bi-upload" style="font-size: smaller;"></i>
-                            </span>
-              <span v-if="field.input_type=='select'" class="svg-icon svg-icon-muted svg-icon-2hx">
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi bi-check2-square" style="font-size: x-large;"></i>
+                                  <span class="element-title">Checkbox</span>
+                      </span>
 
-                                <i class="bi bi-ui-checks-grid" style="font-size: x-large;"></i>
-                            </span>
-              <span v-if="field.input_type=='selectmuilt'" class="svg-icon svg-icon-muted svg-icon-2hx">
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi  bi-ui-checks" style="font-size: x-large;"></i>
+                                  <span class="element-title">Checklist</span>
+                      </span>
 
+                </div>
+              </div>
 
-                                <i class="bi bi-ui-checks" style="font-size: x-large;"></i>
-                            </span>
+            </div>
+          </div>
+          <div class="card-body  ">
+            <small>
+              Media  Elements
+            </small>
+            <div class="row mt-1">
 
-              {{ field.label }}</h1>
+              <div class="col-md-6">
 
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                <i class="bi bi-card-image" style="font-size: x-large;"></i>
+                                <span class="element-title">Image</span>
+                    </span>
 
+                </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi bi-upload" style="font-size: x-large;"></i>
+                                  <span class="element-title">File Upload</span>
+                      </span>
+
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <div class="card" style="background-color: #f2f2f2;color: #999999ab;">
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx" style="padding: 5px;color: #636060f2;">
+                                  <i class="bi bi-paperclip" style="font-size: x-large;"></i>
+                                 <span class="element-title">Attachments</span>
+                      </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
       <div class="col-9">
-        <div class="card mb-5 mb-xl-10 action_area " @dragover.prevent @drop="onDrop"  style="height: 100%;padding: 20px;">
+        <div class="card mb-5 mb-xl-10  " @dragover.prevent @drop="onDrop"  style="height: 100%;padding: 20px;">
           <draggable v-model="formFields" @end="onEnd">
 
             <transition-group tag="div" name="list">
